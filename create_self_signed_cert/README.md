@@ -26,12 +26,14 @@
 
 ## 📁 Output Structure
 เมื่อรันสคริปต์แล้ว จะได้โครงสร้างประมาณนี้:
+```sh
 certs/
 └── myproject-20250101-153000/
-├── ca.crt
-├── ca.key
-├── server.crt
-└── server.key
+    ├── ca.crt
+    ├── ca.key   
+    ├── server.crt
+    └── server.key
+```
 
 > ⚠️ **ห้าม commit cert/key จริงขึ้น GitHub**
 ---
@@ -46,9 +48,9 @@ chmod +x ./start_creat.sh
 
 ### 2) รันสคริปต์
 ```bash
-ิbash ./start_creat.sh
+bash ./start_creat.sh
 ```
 
 ```bash
-ิ./start_creat.sh
+./start_creat.sh
 ```
