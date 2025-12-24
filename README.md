@@ -9,44 +9,39 @@
 Welcome to my personal collection of **automation scripts** and **operational tools**. 
 As a DevOps Engineer, I believe in the philosophy of *"Automate everything that needs to be done more than twice."*
 
-This repository contains scripts I use for:
-* 🔐 **Security:** SSL/TLS Certificate management
-* 🐳 **Container:** Docker & Kubernetes maintenance
-* ☁️ **Cloud:** AWS Resource management & Cleanup
-* 🐧 **System:** Linux administration & Monitoring
+This repository contains a small collection of DevOps helper scripts. The main tool currently available is a **PostgreSQL TLS certificate generator** located in the `create_self_signed_cert/` directory — a Bash script that creates an internal CA and server certificates with SAN (DNS/IP) support for PostgreSQL (intended for local/dev environments).
 
 ---
 
 ## 📂 Script Catalog
 
-Here is a list of available tools categorized by function:
-
-### 🔐 Security & Certificates
+### 🔐 PostgreSQL TLS Certificate Generator
 | Script Name | Language | Description |
 | :--- | :--- | :--- |
-| `ssl/gen-self-signed.sh` | Bash | Generates a self-signed SSL certificate with SAN (Subject Alternative Name) support for local development. |
-| `ssl/check-expiry.sh` | Bash | Checks SSL certificate expiration date of a remote domain and alerts if expiring soon. |
+| `create_self_signed_cert/create_self_sign_cert.sh` | Bash | Generates an internal CA and server cert/key (supports SAN DNS/IP) for PostgreSQL. |
+| `create_self_signed_cert/start_create.sh` | Bash | Example wrapper that sets sensible defaults and runs the generator. |
 
-### 🐳 Docker & Kubernetes
-| Script Name | Language | Description |
-| :--- | :--- | :--- |
-| `docker/prune-all.sh` | Bash | Safely cleans up unused Docker images, containers, and networks to free up disk space. |
-| `k8s/context-switcher.sh` | Bash | A simple utility to switch between K8s contexts and namespaces quickly. |
-
-### ☁️ Cloud & Backup
-| Script Name | Language | Description |
-| :--- | :--- | :--- |
-| `aws/s3-upload.py` | Python | Uploads backups to AWS S3 with automatic versioning and slack notification support. |
-| `db/backup-postgres.sh` | Bash | Dumps PostgreSQL database, compresses it, and rotates old backups (keeps last 7 days). |
+> See `create_self_signed_cert/README.md` for detailed usage and examples.
 
 ---
 
-## 🚀 Usage Examples
+## 📂 Script Catalog
+
+This repo currently focuses on the PostgreSQL TLS certificate generator (see above).
+
+
+
+
+
+
+
+---
+
+## Notes
 
 ### 1. Generating a Self-Signed Certificate
 Stop struggling with `openssl` commands. This script generates a valid self-signed cert for `localhost` or any domain in seconds.
 
 **Usage:**
 ```bash
-# chmod +x ssl/gen-self-signed.sh
-./ssl/gen-self-signed.sh --domain myapp.local --days 365
+See `create_self_signed_cert/README.md` for the actual usage example.

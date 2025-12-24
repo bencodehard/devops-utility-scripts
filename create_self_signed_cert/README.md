@@ -43,14 +43,17 @@ certs/
 
 ```bash
 chmod +x ./create_self_sign_cert.sh
-chmod +x ./start_creat.sh
+chmod +x ./start_create.sh
 ```
 
-### 2) รันสคริปต์
+### 2) รันสคริปต์ (ตัวอย่าง)
 ```bash
-bash ./start_creat.sh
+./start_create.sh
 ```
 
+หรือจะรันสคริปต์หลักด้วยตัวแปรสภาพแวดล้อมโดยตรง:
+
 ```bash
-./start_creat.sh
+PROJECT_NAME=myproj DNS_NAMES="postgres,localhost" IP_ADDRESSES="127.0.0.1" \
+  ./create_self_sign_cert.sh
 ```
