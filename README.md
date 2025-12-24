@@ -15,14 +15,18 @@ This repository contains a small collection of DevOps helper scripts. The main t
 
 ## 📂 Script Catalog
 
-### 🔐 PostgreSQL TLS Certificate Generator
+### TLS Certificate Generator
 | Script Name | Language | Description |
 | :--- | :--- | :--- |
 | `create_self_signed_cert/create_self_sign_cert.sh` | Bash | Generates an internal CA and server cert/key (supports SAN DNS/IP) for PostgreSQL. |
 | `create_self_signed_cert/start_create.sh` | Bash | Example wrapper that sets sensible defaults and runs the generator. |
+
+### Setup psql tls ssl connections
+| Directory | Language | Description |
+| :--- | :--- | :--- |
 | `psql-container-ssl-connection-setup/` | Docker Compose / Bash | Example Compose + Dockerfile to run PostgreSQL with TLS (includes `.env.example`, example certs, and helper scripts). |
 
-> See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) and [psql-container-ssl-connection-setup/README.md](psql-container-ssl-connection-setup/README.md) for detailed usage and examples.
+> See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) for the certificate generator usage; see [psql-container-ssl-connection-setup/README.md](psql-container-ssl-connection-setup/README.md) for the Compose setup and SSL connection tests.
 
 ---
 
