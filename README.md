@@ -21,7 +21,7 @@ This repository contains a small collection of DevOps helper scripts. The main t
 | `create_self_signed_cert/create_self_sign_cert.sh` | Bash | Generates an internal CA and server cert/key (supports SAN DNS/IP) for PostgreSQL. |
 | `create_self_signed_cert/start_create.sh` | Bash | Example wrapper that sets sensible defaults and runs the generator. |
 
-> See `create_self_signed_cert/README.md` for detailed usage and examples.
+> See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) for detailed usage and examples.
 
 ---
 
