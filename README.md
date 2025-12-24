@@ -43,4 +43,5 @@ This repo currently focuses on the PostgreSQL TLS certificate generator (see abo
 Stop struggling with `openssl` commands. This script generates a valid self-signed cert for `localhost` or any domain in seconds.
 
 **Usage:**
-See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) for the actual usage example.
+```bash
+See `create_self_signed_cert/README.md` for the actual usage example.
