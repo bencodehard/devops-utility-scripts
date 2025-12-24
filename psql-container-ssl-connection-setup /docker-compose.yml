@@ -1,0 +1,19 @@
+services:
+  db:
+    build: .
+    container_name: postgres_ssltls
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    volumes:
+      - ${CERTS_DIR:-./example_certs}:/var/lib/postgresql/tls:ro
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
