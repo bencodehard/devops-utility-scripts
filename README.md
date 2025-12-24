@@ -26,7 +26,8 @@ This repository contains a small collection of DevOps helper scripts. The main t
 | :--- | :--- | :--- |
 | `psql-container-ssl-connection-setup/` | Docker Compose / Bash | Example Compose + Dockerfile to run PostgreSQL with TLS (includes `.env.example`, example certs, and helper scripts). |
 
-> See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) for the certificate generator usage; see [psql-container-ssl-connection-setup/README.md](psql-container-ssl-connection-setup/README.md) for the Compose setup and SSL connection tests.
+> See [create_self_signed_cert/README.md](create_self_signed_cert/README.md) for the certificate generator usage; 
+> See [psql-container-ssl-connection-setup/README.md](psql-container-ssl-connection-setup/README.md) for the Compose setup and SSL connection tests.
 
 ---
 
