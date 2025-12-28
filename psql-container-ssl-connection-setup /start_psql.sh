@@ -4,14 +4,14 @@ set -euo pipefail
 echo "▶ Starting PostgreSQL TLS container..."
 
 # Load .env
-if [[ ! -f ".env" ]]; then
+if [[ ! -f "./.env" ]]; then
   echo "❌ .env file not found"
   echo "👉 Please create .env from .env.example"
   exit 1
 fi
 
 set -a
-source .env
+source ./.env
 set +a
 
 # Validate required vars
