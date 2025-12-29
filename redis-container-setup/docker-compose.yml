@@ -1,0 +1,32 @@
+# docker-compose.yml
+version: "3.9"
+
+services:
+  redis:
+    build: .
+    container_name: redis
+    env_file:
+      - .env
+    ports:
+      # expose สำหรับ local dev; ถ้าใช้ใน prod ภายใน cluster สามารถเอาออกได้
+      - "${REDIS_PORT:-6379}:6379"
+    command:
+      [
+        "redis-server",
+        "/usr/local/etc/redis/redis.conf",
+        "--requirepass",
+        "${REDIS_PASSWORD}"
+      ]
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+networks:
+  default:
+    name: redis-net
+    driver: bridge
